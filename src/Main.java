@@ -4,14 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int n = 10; // n define a altura da pirâmide, ou seja, a entrada do algoritmo
+        int n = 25; // n define a altura da pirâmide, ou seja, a entrada do algoritmo
         Integer[][] triangulo = new Integer[n][n];
 
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i > j) {
+            for (int j = 0; j < i; j++) {
                     triangulo[i][j] = 0; // preenche de 0's as posições abaixo da linha diagonal principal
-                }
             }
             triangulo[i][0] = 1; // preenche a primeira coluna de 1's
             triangulo[i][i] = 1; // preenche de 1's a diagonal média da matriz
