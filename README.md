@@ -58,3 +58,17 @@ public static void main(String[] args) {
     }
 
 ```
+
+O trecho principal do algoritmo:
+```java 
+        for (int i = 1; i < n; i++) { // percorre todas as linhas da matriz
+            for (int j = 1; j < i; j++) { // este "for" percorre somente a parte abaixo da diagonal média da matriz
+                    if (triangulo[i][j] == 0) {
+                        int a = triangulo[i - 1][j - 1]; // a recebe o valor da coluna anterior e linha acima
+                        int b = triangulo[i - 1][j]; // b recebe o valor da linha acima
+                        triangulo[i][j] = a + b;
+                }
+            }
+        }
+```
+possui dois ciclos "for" aninhados, o primeiro com i começando em 1 indo até n e o segundo com j indo de 1 até i, assim, tem-se que a complexidade do algoritmo é n*n/2 = O(n²).
